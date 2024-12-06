@@ -4,7 +4,7 @@ YHPIC is a highly scalable and efficient parallel solver for PIC plasma simulati
 ### YHPIC-CPU
 YHPIC-CPU is a program that can only run on the CPU, and the work in the paper involves porting several core functions of this program to the MT-3000 processor.
 
-1. MPI Parallel Computing Environment
+#1. MPI Parallel Computing Environment
 The YHPIC-CPU program has been successfully tested in the MPICH 3.0 or later environment. To install the MPI environment on Ubuntu Linux, you can run the following command:
 
 $ sudo apt-get install mpich libmpichdev
