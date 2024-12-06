@@ -24,3 +24,7 @@ By default, the program is compiled with the -O3 optimization option, and the ex
 4. Running
 Navigate to the run subdirectory and run the following command:
   $ mpirun -np N ./lared-p   # N represents the number of parallel CPU cores.
+
+
+### YHPIC-MT3000
+The code running on the CPU is located in the host_code directory, while the code running on the accelerator domain is located in the kernel_code directory.
