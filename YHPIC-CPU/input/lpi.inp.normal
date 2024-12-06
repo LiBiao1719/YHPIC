@@ -1,0 +1,71 @@
+////////////////////////////////////////////////////////////////////
+//
+//         input for ppic ( 均为归一化量纲 )
+//
+///////////////////////////////////////////////////////////////////
+
+&pulse
+------------------------------------------------
+Q               = 1        #switch ON(Q=1) OFF(Q=0)
+spotwidth       = 3       #half width of laser spot
+amplitude       = 2      #laser field amplitude
+focus_z         = 5     #
+angle           = 30
+polarization    = 1        #p=1,  s=2,  c=3
+shape           = 1        #linear=1, sin=2, sin^2=3, Gauss=4
+raise           = 3        #pulse raise/fall time in periods
+duration        = 6        #pulse duration
+
+&box
+--------------------------------------------------
+cells_per_wl    = 25        #cells per wavelength
+cells_axis      = 250      #total number of cells of x1
+cells_trans     = 500      #total number of cells of x2
+cells_left      = 100      #cells vacuun left
+cells_gap       = 50      #cells vacuun upper and down
+cells_ramp      = 0
+cells_plasma    = 25     #occupied cells for plasma
+n_ion_over_nc   = 5     #maximum density/critical density
+e_ppc           = 16        #
+e_fix           = 0
+e_vtherm        = 0.0
+i_ppc           = 16
+i_fix           = 1
+i_vtherm        = 0.0
+i_z             = 1
+i_m             = 1836
+
+&shift
+--------------------------------------------------
+shift_strt      = 500000    #number of cell to start shift(shift_step = 2*shift_strt)
+shift_dx        = 1     #number of cell for one shift(shift_dstep = 2*shift_dx)
+
+&parallel
+-----------------------------------------------------
+nproc = 2
+np_x  = 2
+np_y  = 1
+np_z  = 1
+           
+&propagate
+-----------------------------------------------------
+prop_start      = 0         #start time in periods
+prop_stop       = 10      #stop time in periods
+prop_save       = 1
+prop_restart    = 100
+&output
+-----------------------------------------------------
+
+path            = ./data    #path of data file
+//////////////////////////////////////////////////////////////////////////////////////////
+
+&traces
+      Q          = 0         # traces?
+      t_start    = 0         # start time in periods
+      t_stop     = 5       # stop time in periods
+      traces     = 3         # # of traces at fixed positions x: 
+               t0_x=25, t0_y=0, t0_z=10
+               t1_x=25, t1_y=0, t1_z=20
+               t2_x=25, t2_y=0, t2_z=30
+
+
