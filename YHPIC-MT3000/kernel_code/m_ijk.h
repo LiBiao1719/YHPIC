@@ -39,7 +39,7 @@ __shared__ void m_ijk(lvector double *x, lvector double *y,lvector double *z, lv
 
 	"		SNOP	5						\n\t"
 
-	" 	VFCMPLD.M1 VR6,VR62,VR9	   \n\t"  // < 0.5 取值为1
+	" 	VFCMPLD.M1 VR6,VR62,VR9	   \n\t"  // < 0.5 ->1
 	"|  VFCMPLD.M2 VR7,VR62,VR10   \n\t"  //VFCMPED 1
 	"|  VFCMPLD.M3 VR8,VR62,VR11   \n\t"  // vr62 -> 0.5
 
