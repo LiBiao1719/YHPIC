@@ -1,0 +1,92 @@
+////////////////////////////////////////////////////////////////////
+//
+//         input for ppic ( 均为归一化量纲 )
+//
+///////////////////////////////////////////////////////////////////
+
+&pulse
+------------------------------------------------
+Q               = 1        #switch ON(Q=1) OFF(Q=0)
+spotwidth       = 3        #half width of laser spot
+amplitude       = 0.0     #laser field amplitude
+focus_z         = 4     #
+angle           = 0
+polarization    = 1        #p=1,  s=2,  c=3
+shape           = 1        #linear=1, sin=2, sin^2=3, Gauss=4
+raise           = 1        #pulse raise/fall time in periods
+duration        = 100        #pulse duration
+
+Qtrain          = 0
+trains          = 1
+                t1 = 10 , t2 = 20 
+
+&box
+--------------------------------------------------
+cells_per_wl    = 8      #cells per wavelength
+cells_axis      = 64     #length of x1/wavelength
+cells_trans     = 128     #length of x2/wavelength
+cells_left      = 0      #length of vacuum left/wavelength
+cells_gap       = 0      #length of vacuum upper and down/wavelength
+cells_ramp      = 0      #length of ramp/wavelength
+n_ion_ramp      = 0
+cells_plasma    = 64     #occupied cells for plasma
+n_ion_over_nc   = 0.1    #maximum density/critical density
+e_ppc           = 8        #
+e_fix           = 0
+e_vtherm        = 0.5
+i_ppc           = 1
+i_fix           = 0
+i_vtherm        = 0.0
+i_z             = 1
+i_m             = 1836
+
+&shift
+--------------------------------------------------
+shift_strt      = 500000    #number of cell to start shift(shift_step = 2*shift_strt)
+shift_dx        = 1     #number of cell for one shift(shift_dstep = 2*shift_dx)
+
+&parallel
+-----------------------------------------------------
+nproc = 16
+np_x  = 4
+np_y  = 4
+np_z  = 1
+           
+&propagate
+-----------------------------------------------------
+prop_start      = 0         #start time in periods
+prop_stop       = 1     #stop time in periods
+prop_save       = 20000
+prop_restart    = 60000 
+&output
+-----------------------------------------------------
+
+//////////////////////////////////////////////////////////////////////////////////////////
+path            = ./data    #path of data file
+
+&particle
+Q               = 0
+t_start         = 1
+t_stop          = 1
+t_step          = 10
+
+&field 
+Q               = 1
+t_start         = 5
+t_stop          = 100
+t_step          = 5
+q_e     = 1
+q_b     = 1
+q_x     = 0
+q_y     = 0
+
+&traces
+      Q          = 0         # traces?
+      t_start    = 0         # start time in periods
+      t_stop     = 5       # stop time in periods
+      traces     = 3         # # of traces at fixed positions x: 
+               t0_x=25, t0_y=0, t0_z=10
+               t1_x=25, t1_y=0, t1_z=20
+               t2_x=25, t2_y=0, t2_z=30
+
+
