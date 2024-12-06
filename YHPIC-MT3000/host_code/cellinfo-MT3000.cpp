@@ -189,15 +189,12 @@ void CellInfo::mt_read_particle()
 }
 
 /* PIC loop */
-void CellInfo::mt_advance(Scalar t)
-{
-
-	//Particle advection and higher-order interpolation computation
-	mt_cpu_accelerate(mt_x,mt_y,mt_z,mt_ux,mt_uy,mt_uz,mt_zm,mt_igamma);
-
-	// Particle sorting algorithm based on a 4x4x4 region
-	mt_change_region();
-}
+//mt_advance()：this function's core computation includes the following two functions.
+//1. Particle advection and higher-order interpolation computation
+//	mt_cpu_accelerate(mt_x,mt_y,mt_z,mt_ux,mt_uy,mt_uz,mt_zm,mt_igamma);
+//
+//2.  Particle sorting algorithm based on a 4x4x4 region
+//	mt_change_region();
 
 
 void CellInfo::mt_cpu_accelerate()
