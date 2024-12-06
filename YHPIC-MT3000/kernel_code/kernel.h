@@ -1,4 +1,3 @@
-
 // Implement the operation shown in Figure 6 of the paper using assembly instructions of the MT-3000 architecture
 // The symbol '|' indicates that the instruction and the adjacent previous instruction are issued in the same clock cycle.
 __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector double *EB3,lvector double *vec, long *node_id)
@@ -70,7 +69,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[112]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[128]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -82,7 +81,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR21:VR20, *+AR3[160]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
 ////////////////////////////////////////////////////////////////////////////
-// index[2] 读取
+// index[2] read
 			"	VSTDW   VR23:VR22, *+AR3[176]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -155,7 +154,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[113]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[129]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -166,7 +165,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[161]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[4] 读取
+// index[4] read
 			"	VSTDW   VR23:VR22, *+AR3[177]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -239,7 +238,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[114]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[130]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -250,7 +249,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[162]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[6] 读取
+// index[6] read
 			"	VSTDW   VR23:VR22, *+AR3[178]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -323,7 +322,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[115]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[131]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -334,7 +333,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[163]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[8] 读取
+// index[8] read
 			"	VSTDW   VR23:VR22, *+AR3[179]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -407,7 +406,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[116]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[132]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -418,7 +417,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[164]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[10] 读取
+// index[10] read
 			"	VSTDW   VR23:VR22, *+AR3[180]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -491,7 +490,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[117]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[133]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -502,7 +501,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[165]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[12] 读取
+// index[12] read
 			"	VSTDW   VR23:VR22, *+AR3[181]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -575,7 +574,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[118]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[134]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -586,7 +585,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[166]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[14] 读取
+// index[14] read
 			"	VSTDW   VR23:VR22, *+AR3[182]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -659,7 +658,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[119]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[135]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -697,7 +696,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR51:VR50, *+AR3[407]         \n\t"
 			"|  VSTDW   VR53:VR52, *+AR3[423]         \n\t"
 
-//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?//index[1] 读取
+//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 //index[1] read
 
 			"   VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 			"|  VLDDWM2 *-AR1[56],  VR3:VR2    \n\t" //vr2-3,vr3-4
@@ -725,7 +724,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"	SNOP	1\n\t"
 
-			"   VSTW   VR0, *++AR3[1]         \n\t"  //对索引为[1]的地址写入数据，后续写入间�?6个字
+			"   VSTW   VR0, *++AR3[1]         \n\t"  
 			"|  VLDDWM2 *+AR1[7],  VR33:VR32  \n\t" //vr16-24,vr17-25
 			"|	SLDW	  *+AR15[3], R10	\n\t" //sldw 7
 
@@ -749,7 +748,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -802,8 +801,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?////////////////////////////////////////////////////////////////////////////
-// index[3] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[3] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -876,7 +875,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -928,7 +927,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[5] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 // index[5] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1001,7 +1000,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1053,8 +1052,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[7] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[7] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1127,7 +1126,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1179,8 +1178,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[9] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[9] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1253,7 +1252,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1305,8 +1304,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[11] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[11] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1379,7 +1378,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1431,8 +1430,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[13] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[13] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1505,7 +1504,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1557,7 +1556,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[15] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 // index[15] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1630,7 +1629,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1673,11 +1672,11 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR29, *+AR4[304]   \n\t"
 			"|  VSTW   VR30, *+AR4[320]   \n\t"
-			"|	SMOVI24	0x1B00,R11		  \n\t" // 地址偏移54*16*8字节
+			"|	SMOVI24	0x1B00,R11		  \n\t" // offset 54*16*8 bytes
 
 			"   VSTW   VR31, *+AR4[336]   \n\t"
 			"|  VSTW   VR32, *+AR4[352]   \n\t"
-			"|	SADD	R11,R31,R31		  \n\t" //R31 保存EB2的写入地址
+			"|	SADD	R11,R31,R31		  \n\t" //R31 EB2 addr for write
 
 			"   VSTW   VR33, *+AR4[368]   \n\t"
 			"|  VSTW   VR34, *+AR4[384]   \n\t"
@@ -1686,7 +1685,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *+AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
 			"	VSTW   VR38, *+AR4[448]   \n\t"
 			"|	VSTW   VR39, *+AR4[464]   \n\t"
 
@@ -1711,7 +1710,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTW   VR52, *+AR4[672]         \n\t"
 			"|  VSTW   VR53, *+AR4[688]         \n\t"
 
-// EB2 index[0] // index[15] 后半部分写入
+// EB2 index[0] // index[15] write
 			"   VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 			"|  VLDDWM2 *-AR1[56],  VR3:VR2    \n\t" //vr2-3,vr3-4
 
@@ -1762,7 +1761,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[112]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[128]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1774,7 +1773,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR21:VR20, *+AR3[160]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
 ////////////////////////////////////////////////////////////////////////////
-// index[2] 读取
+// index[2] read
 			"	VSTDW   VR23:VR22, *+AR3[176]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1847,7 +1846,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[113]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[129]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1858,7 +1857,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[161]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[4] 读取
+// index[4] read
 			"	VSTDW   VR23:VR22, *+AR3[177]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -1931,7 +1930,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[114]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[130]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -1942,7 +1941,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[162]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[6] 读取
+// index[6] read
 			"	VSTDW   VR23:VR22, *+AR3[178]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2015,7 +2014,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[115]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[131]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2026,7 +2025,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[163]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[8] 读取
+// index[8] read
 			"	VSTDW   VR23:VR22, *+AR3[179]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2099,7 +2098,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[116]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[132]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2110,7 +2109,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[164]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[10] 读取
+// index[10] read
 			"	VSTDW   VR23:VR22, *+AR3[180]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2183,7 +2182,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[117]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[133]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2194,7 +2193,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[165]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[12] 读取
+// index[12] read
 			"	VSTDW   VR23:VR22, *+AR3[181]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2267,7 +2266,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[118]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[134]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2278,7 +2277,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[166]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[14] 读取
+// index[14] read
 			"	VSTDW   VR23:VR22, *+AR3[182]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2351,7 +2350,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[119]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[135]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2389,8 +2388,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR51:VR50, *+AR3[407]         \n\t"
 			"|  VSTDW   VR53:VR52, *+AR3[423]         \n\t"
 
-//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-//index[1] 读取
+//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+//index[1] read
 			"   VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 			"|  VLDDWM2 *-AR1[56],  VR3:VR2    \n\t" //vr2-3,vr3-4
 
@@ -2417,7 +2416,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"	SNOP	1\n\t"
 
-			"   VSTW   VR0, *++AR3[1]         \n\t"  //对索引为[1]的地址写入数据，后续写入间�?6个字
+			"   VSTW   VR0, *++AR3[1]         \n\t"  
 			"|  VLDDWM2 *+AR1[7],  VR33:VR32  \n\t" //vr16-24,vr17-25
 			"|	SLDW	  *+AR15[3], R10	\n\t" //sldw 7
 
@@ -2441,7 +2440,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2494,8 +2493,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?////////////////////////////////////////////////////////////////////////////
-// index[3] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 ////////////////////////////////////////////////////////////////////////////
+// index[3] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2568,7 +2567,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2620,7 +2619,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[5] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 // index[5] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2693,7 +2692,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2745,8 +2744,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[7] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[7] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2819,7 +2818,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2871,8 +2870,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[9] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[9] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -2945,7 +2944,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -2997,8 +2996,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[11] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[11] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3071,7 +3070,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3123,8 +3122,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[13] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[13] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3197,7 +3196,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3249,7 +3248,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[15] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 // index[15] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3322,7 +3321,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3365,11 +3364,11 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR29, *+AR4[304]   \n\t"
 			"|  VSTW   VR30, *+AR4[320]   \n\t"
-			"|	SMOVI24	0x1B00,R11		  \n\t" // 地址偏移54*16*8字节
+			"|	SMOVI24	0x1B00,R11		  \n\t" 
 
 			"   VSTW   VR31, *+AR4[336]   \n\t"
 			"|  VSTW   VR32, *+AR4[352]   \n\t"
-			"|	SADD	R11,R31,R31		  \n\t" //R31 保存EB2的写入地址
+			"|	SADD	R11,R31,R31		  \n\t" 
 
 			"   VSTW   VR33, *+AR4[368]   \n\t"
 			"|  VSTW   VR34, *+AR4[384]   \n\t"
@@ -3378,7 +3377,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *+AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
 			"	VSTW   VR38, *+AR4[448]   \n\t"
 			"|	VSTW   VR39, *+AR4[464]   \n\t"
 
@@ -3403,7 +3402,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTW   VR52, *+AR4[672]         \n\t"
 			"|  VSTW   VR53, *+AR4[688]         \n\t"
 
-//EB3 //index[0] 读取
+//EB3 //index[0] read
 			"   VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 			"|  VLDDWM2 *-AR1[56],  VR3:VR2    \n\t" //vr2-3,vr3-4
 
@@ -3454,7 +3453,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[112]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[128]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3466,7 +3465,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR21:VR20, *+AR3[160]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
 ////////////////////////////////////////////////////////////////////////////
-// index[2] 读取
+// index[2] read
 			"	VSTDW   VR23:VR22, *+AR3[176]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3539,7 +3538,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[113]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[129]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3550,7 +3549,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[161]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[4] 读取
+// index[4] read
 			"	VSTDW   VR23:VR22, *+AR3[177]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3623,7 +3622,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[114]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[130]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3634,7 +3633,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[162]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[6] 读取
+// index[6] read
 			"	VSTDW   VR23:VR22, *+AR3[178]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3707,7 +3706,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[115]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[131]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3718,7 +3717,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[163]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[8] 读取
+// index[8] read
 			"	VSTDW   VR23:VR22, *+AR3[179]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3791,7 +3790,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[116]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[132]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3802,7 +3801,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[164]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[10] 读取
+// index[10] read
 			"	VSTDW   VR23:VR22, *+AR3[180]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3875,7 +3874,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[117]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[133]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3886,7 +3885,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[165]   \n\t"
 			"|  VLDDWM2 *+AR2[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[12] 读取
+// index[12] read
 			"	VSTDW   VR23:VR22, *+AR3[181]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -3959,7 +3958,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[118]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[134]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -3970,7 +3969,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR21:VR20, *+AR3[166]   \n\t"
 			"|  VLDDWM2 *+AR1[57],  VR53:VR52  \n\t" //vr16-24,vr17-25
-// index[14] 读取
+// index[14] read
 			"	VSTDW   VR23:VR22, *+AR3[182]   \n\t"
 			"|  VLDDWM2 *-AR2[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4043,7 +4042,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTDW   VR15:VR14, *+AR3[119]   \n\t"
 			"|  VLDDWM2 *+AR2[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTDW   VR17:VR16, *+AR3[135]   \n\t"
 			"|  VLDDWM2 *+AR2[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4081,7 +4080,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"   VSTDW   VR51:VR50, *+AR3[407]         \n\t"
 			"|  VSTDW   VR53:VR52, *+AR3[423]         \n\t"
 
-//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?//index[1] 读取
+//			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 //index[1] read
 
 			"   VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 			"|  VLDDWM2 *-AR1[56],  VR3:VR2    \n\t" //vr2-3,vr3-4
@@ -4109,7 +4108,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"	SNOP	1\n\t"
 
-			"   VSTW   VR0, *++AR3[1]         \n\t"  //对索引为[1]的地址写入数据，后续写入间�?6个字
+			"   VSTW   VR0, *++AR3[1]         \n\t"  
 			"|  VLDDWM2 *+AR1[7],  VR33:VR32  \n\t" //vr16-24,vr17-25
 			"|	SLDW	  *+AR15[3], R10	\n\t" //sldw 7
 
@@ -4133,7 +4132,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4186,8 +4185,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?////////////////////////////////////////////////////////////////////////////
-// index[3] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 ////////////////////////////////////////////////////////////////////////////
+// index[3] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4260,7 +4259,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4312,7 +4311,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[5] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 // index[5] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4385,7 +4384,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4437,8 +4436,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[7] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[7] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4511,7 +4510,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4563,8 +4562,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[9] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[9] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4637,7 +4636,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4689,8 +4688,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[11] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 
+// index[11] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4763,7 +4762,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4815,8 +4814,8 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR4[416]   \n\t"
 
 			"   VSTW   VR37, *++AR4[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?
-// index[13] 读取
+			"|  SMVAGA.M2 R31,AR3           \n\t" //R31 
+// index[13] read
 			"	VSTW   VR38, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -4889,7 +4888,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -4941,7 +4940,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  VSTW   VR36, *+AR3[416]   \n\t"
 
 			"   VSTW   VR37, *++AR3[432]   \n\t"
-			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 保存重排向量的首地址，不能更改R31的�?// index[15] 读取
+			"|  SMVAGA.M2 R31,AR4           \n\t" //R31 // index[15] read
 			"	VSTW   VR38, *++AR3[16]   \n\t"
 			"|  VLDDWM2 *-AR1[57],  VR1:VR0    \n\t" //vr0-0,vr1-1
 
@@ -5014,7 +5013,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 
 			"   VSTW   VR7, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[50],  VR47:VR46  \n\t" //vr16-24,vr17-25
-			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  左移三位相当于乘�?
+			"|	SSHFLL	  3, R10, R10       \n\t"  //SSHFLL 1  
 
 			"   VSTW   VR8, *++AR4[16]   \n\t"
 			"|  VLDDWM2 *+AR1[55],  VR49:VR48  \n\t" //vr16-24,vr17-25
@@ -5092,7 +5091,7 @@ __shared__ void matrix_trans(lvector double *EB1, lvector double *EB2, lvector d
 			"|  SMOVI24   0xFFFF,R29           \n\t"
 
 			"	SNOP	3						\n\t"
-			"   SMVCGC  R29,VLR           \n\t"  // vpe 重新恢复，全部打开
+			"   SMVCGC  R29,VLR           \n\t" 
 			"	SNOP	4						\n\t"
 			:
 			: [eb1]   "r" (EB1),
@@ -5217,7 +5216,6 @@ __shared__ void S0_multiply_eb(lvector double *vec, lvector double *BE_node,lvec
 			"   VFMULD.M1 VR62,VR6,VR54     \n\t"   //vfmuld 4
 			"|  VFMULD.M2 VR62,VR7,VR55     \n\t"
 			"|  VFMULD.M3 VR62,VR8,VR56     \n\t"
-//VR30-VR56 表示S0[1-27] ,已经验证S0的汇编代码正�?
 //E1
 			"   VFMULD.M1   VR21,VR51,VR21  \n\t"
 			"|  VFMULD.M2   VR22,VR52,VR22  \n\t"
@@ -5453,7 +5451,7 @@ __shared__ void S0_multiply_eb(lvector double *vec, lvector double *BE_node,lvec
 			"|  VFMULAD.M2   VR22,VR52,VR10,VR22    \n\t"
 			"|  VFMULAD.M3   VR23,VR53,VR11,VR23    \n\t"
 
-			"	SNOP 1		\n\t"  //vload vr24 9 周期
+			"	SNOP 1		\n\t"  //vload vr24 9 
 
 			"   VFMULAD.M1   VR24,VR54,VR12,VR24    \n\t"
 			"|  VFMULAD.M2   VR25,VR55,VR13,VR25    \n\t"
@@ -5552,7 +5550,7 @@ __shared__ void S0_multiply_eb(lvector double *vec, lvector double *BE_node,lvec
 			"|  VFMULAD.M2   VR22,VR52,VR10,VR22    \n\t"
 			"|  VFMULAD.M3   VR23,VR53,VR11,VR23    \n\t"
 
-			"	SNOP 1		\n\t"  //vload vr24 9 周期
+			"	SNOP 1		\n\t"  //vload vr24 9 
 
 			"   VFMULAD.M1   VR24,VR54,VR12,VR24    \n\t"
 			"|  VFMULAD.M2   VR25,VR55,VR13,VR25    \n\t"
@@ -5649,7 +5647,7 @@ __shared__ void S0_multiply_eb(lvector double *vec, lvector double *BE_node,lvec
 			"|  VFMULAD.M2   VR22,VR52,VR10,VR22    \n\t"
 			"|  VFMULAD.M3   VR23,VR53,VR11,VR23    \n\t"
 
-			"	SNOP 1		\n\t"  //vload vr24 9 周期
+			"	SNOP 1		\n\t"  //vload vr24 9 
 
 			"   VFMULAD.M1   VR24,VR54,VR12,VR24    \n\t"
 			"|  VFMULAD.M2   VR25,VR55,VR13,VR25    \n\t"
@@ -5749,13 +5747,13 @@ __shared__ void S0_multiply_eb(lvector double *vec, lvector double *BE_node,lvec
 			"|  VFMULAD.M2   VR22,VR52,VR10,VR22    \n\t"
 			"|  VFMULAD.M3   VR23,VR53,VR11,VR23    \n\t"
 
-			"		SNOP 1		\n\t"  //vload vr24 9 周期
+			"		SNOP 1		\n\t"  //vload vr24 9 
 
 			"   VFMULAD.M1   VR24,VR54,VR12,VR24    \n\t"
 			"|  VFMULAD.M2   VR25,VR55,VR13,VR25    \n\t"
 			"|  VFMULAD.M3   VR26,VR56,VR14,VR26    \n\t"
 
-			"		SNOP 1		\n\t"  //vload vr24 9 周期
+			"		SNOP 1		\n\t"  //vload vr24 9 
 
 			"   VSTW        VR57,*+AR2[64]       \n\t"
 
